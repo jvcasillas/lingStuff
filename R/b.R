@@ -3,7 +3,7 @@
 #' This function allows you to calculate b from the hit rate and false alarm rate
 #' @param h Hit rate.
 #' @param f False alarm rate.
-#' @keywords b double prime d
+#' @keywords b prime
 #' @export
 #' @examples
 #' b(0.50, 0.25)

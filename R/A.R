@@ -8,10 +8,6 @@
 #' @examples
 #' A(0.50, 0.25)
 
-# Calculate A in discrimination experiments. 
-# Takes two vectors:
-#    - h (hit rate)
-#    - f (false alarm rate)
 
 A <- function(h, f){
     if(f <= .5 & h >= .5)
