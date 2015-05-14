@@ -64,7 +64,7 @@ axb %>%
   summary()
 ```
 
-![](README_files/figure-html/unnamed-chunk-1-1.png) 
+![](README_files/figure-html/dPrime example-1.png) 
 
 ```
 ## 

@@ -22,7 +22,7 @@ Note: It is not necessary to install `dplyr`, but I highly recommend it.
 
 ### D' (d prime)
 
-```{r, warning=FALSE}
+```{r 'dPrime example', warning=FALSE}
 library(lingStuff); library(dplyr)
 
 # Create some data
