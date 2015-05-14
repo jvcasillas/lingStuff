@@ -39,22 +39,7 @@ In the case that you already have `devtools`, then just copy and paste lines 2 a
 
 ```r
 library(lingStuff); library(dplyr)
-```
 
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 # Create some data
 set.seed(1)
 axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
