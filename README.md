@@ -38,7 +38,7 @@ In the case that you already have `devtools`, then just copy and paste lines 2 a
 
 
 ```r
-library(lingStuff); library(dplyr)
+library(lingStuff); library(dplyr); library(pander)
 
 # Create some data
 set.seed(1)
@@ -66,28 +66,16 @@ axb %>%
     abline(lm(dp ~ as.numeric(group), data = .), col = "red")
   } %>%
   lm(dp ~ group, data = .) %>%
-  summary()
+  pander(.)
 ```
 
 ![](README_files/figure-html/dPrime example-1.png) 
+--------------------------------------------------------------
+     &nbsp;        Estimate   Std. Error   t value   Pr(>|t|) 
+----------------- ---------- ------------ --------- ----------
+   **groupg2**     -0.5199     0.05746     -9.047   1.783e-05 
 
-```
-## 
-## Call:
-## lm(formula = dp ~ group, data = .)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -0.18782 -0.03260  0.01253  0.04389  0.13662 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  0.81851    0.04063  20.145 3.85e-08 ***
-## groupg2     -0.51986    0.05746  -9.047 1.78e-05 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 0.09085 on 8 degrees of freedom
-## Multiple R-squared:  0.911,	Adjusted R-squared:  0.8998 
-## F-statistic: 81.85 on 1 and 8 DF,  p-value: 1.783e-05
-```
+ **(Intercept)**    0.8185     0.04063      20.15   3.849e-08 
+--------------------------------------------------------------
+
+Table: Fitting linear model: dp ~ group
