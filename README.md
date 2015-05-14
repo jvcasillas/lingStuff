@@ -66,7 +66,7 @@ axb %>%
     abline(lm(dp ~ as.numeric(group), data = .), col = "red")
   } %>%
   lm(dp ~ group, data = .) %>%
-  pander(., format='markdown_github')
+  pander(., style = "multiline")
 ```
 
 ![](README_files/figure-html/dPrime example-1.png) 
