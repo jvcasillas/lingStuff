@@ -10,7 +10,8 @@ are my own. Feel free to fork and edit as you see fit.
 
 In order to install this package you must have `devtools`. Don't know if you have `devtools`? Copy and paste this into your console:
 
-```
+
+```r
 if (!require('devtools')) {
   stop('The package foo was not installed')
 }
@@ -18,7 +19,8 @@ if (!require('devtools')) {
 
 R will load `devtools` if you have it, otherwise it will give you an error, in which case you should copy and paste the following code into the console:
 
-```
+
+```r
 install.packages("devtools")
 library(devtools)
 install_github("jvcasill/lingStuff")
