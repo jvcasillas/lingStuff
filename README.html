@@ -64,6 +64,18 @@ img {
 <div id="lingstuff" class="section level1">
 <h1>lingStuff</h1>
 <p>This is a collection of functions that I often use in my research. Some are borrowed and edited, others are my own. Feel free to fork and edit as you see fit.</p>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<p>In order to install this package you must have <code>devtools</code>. Don’t know if you have <code>devtools</code>? Copy and paste this into your console:</p>
+<pre><code>if (!require('devtools')) {
+  stop('The package foo was not installed')
+}</code></pre>
+<p>R will load <code>devtools</code> if you have it, otherwise it will give you an error, in which case you should copy and paste the following code into the console:</p>
+<pre><code>install.packages(&quot;devtools&quot;)
+library(devtools)
+install_github(&quot;jvcasill/lingStuff&quot;)</code></pre>
+<p>In the case that you already have <code>devtools</code>, then just copy and paste lines 2 and 3 of the above code chunk.</p>
+</div>
 <div id="to-add" class="section level2">
 <h2>To add</h2>
 <ul>
@@ -72,7 +84,6 @@ img {
 </div>
 <div id="examples" class="section level2">
 <h2>Examples</h2>
-<p>Note: It is not necessary to install <code>dplyr</code>, but I highly recommend it.</p>
 <div id="d-d-prime" class="section level3">
 <h3>D’ (d prime)</h3>
 <pre class="r"><code>library(lingStuff); library(dplyr)</code></pre>

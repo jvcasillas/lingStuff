@@ -12,13 +12,31 @@ This is a collection of functions that I often use
 in my research. Some are borrowed and edited, others 
 are my own. Feel free to fork and edit as you see fit. 
 
+## Installation
+
+In order to install this package you must have `devtools`. Don't know if you have `devtools`? Copy and paste this into your console:
+
+```
+if (!require('devtools')) {
+  stop('The package foo was not installed')
+}
+```
+
+R will load `devtools` if you have it, otherwise it will give you an error, in which case you should copy and paste the following code into the console:
+
+```
+install.packages("devtools")
+library(devtools)
+install_github("jvcasill/lingStuff")
+```
+
+In the case that you already have `devtools`, then just copy and paste lines 2 and 3 of the above code chunk. 
+
 ## To add
 
 - contrast coef calculation
 
 ## Examples
-
-Note: It is not necessary to install `dplyr`, but I highly recommend it.
 
 ### D' (d prime)
 
