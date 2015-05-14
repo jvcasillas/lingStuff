@@ -1,3 +1,9 @@
+---
+output:
+  html_document:
+    keep_md: yes
+    self_contained: yes
+---
 
 lingStuff
 =========
@@ -16,25 +22,9 @@ Note: It is not necessary to install `dplyr`, but I highly recommend it.
 
 ### D' (d prime)
 
-
-```r
+```{r, warning=FALSE}
 library(lingStuff); library(dplyr)
-```
 
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 # Create some data
 set.seed(1)
 axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
@@ -62,27 +52,4 @@ axb %>%
   } %>%
   lm(dp ~ group, data = .) %>%
   summary()
-```
-
-![](README_files/figure-html/unnamed-chunk-1-1.png) 
-
-```
-## 
-## Call:
-## lm(formula = dp ~ group, data = .)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -0.18782 -0.03260  0.01253  0.04389  0.13662 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  0.81851    0.04063  20.145 3.85e-08 ***
-## groupg2     -0.51986    0.05746  -9.047 1.78e-05 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 0.09085 on 8 degrees of freedom
-## Multiple R-squared:  0.911,	Adjusted R-squared:  0.8998 
-## F-statistic: 81.85 on 1 and 8 DF,  p-value: 1.783e-05
 ```
