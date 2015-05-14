@@ -91,3 +91,36 @@ axb %>%
 ## Multiple R-squared:  0.911,	Adjusted R-squared:  0.8998 
 ## F-statistic: 81.85 on 1 and 8 DF,  p-value: 1.783e-05
 ```
+
+### crossOver
+
+
+```r
+# Generate data
+set.seed(1)
+vot = rnorm(20, 15, 5)
+vot = sort(vot)
+phon = c(0,1,0,0,0,0,0,1,0,1,0,1,0,1,1,1,1,1,1,1)
+df = as.data.frame(cbind(vot, phon))
+
+# Fit model
+glm <- glm(phon ~ vot, data = df, family = "binomial")
+
+# Get crossover point
+print(crossOver(glm))
+```
+
+```
+## [1] 15.53595
+```
+
+```r
+# Plot regression with crossover point
+plot(df$vot, df$phon, xlab = "vot", ylab = "phon", pch = 16, col = rgb(0, 0, 204, 102, maxColorValue = 255))
+curve(predict(glm, data.frame(vot = x), type = "resp"), add = TRUE)
+points(vot, fitted(glm), pch = 20)
+abline(v = crossOver(glm), lty = 2, lwd = 0.75)
+abline(h = 0.5, v = 0)
+```
+
+![](README_files/figure-html/crossOver-1.png) 
