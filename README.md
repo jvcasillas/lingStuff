@@ -66,11 +66,10 @@ axb %>%
     abline(lm(dp ~ as.numeric(group), data = .), col = "red")
   } %>%
   lm(dp ~ group, data = .) %>%
-  pander()
+  pander(., format='markdown_github')
 ```
 
 ![](README_files/figure-html/dPrime example-1.png) 
-
 --------------------------------------------------------------
      &nbsp;        Estimate   Std. Error   t value   Pr(>|t|) 
 ----------------- ---------- ------------ --------- ----------
