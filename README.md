@@ -69,7 +69,8 @@ axb %>%
   pander(., style = "multiline")
 ```
 
-![](README_files/figure-html/dPrime example-1.png) 
+![](README_files/figure-html/dPrime example-1.png)  
+
 --------------------------------------------------------------
      &nbsp;        Estimate   Std. Error   t value   Pr(>|t|) 
 ----------------- ---------- ------------ --------- ----------
