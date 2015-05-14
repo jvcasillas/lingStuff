@@ -66,17 +66,15 @@ axb %>%
     abline(lm(dp ~ as.numeric(group), data = .), col = "red")
   } %>%
   lm(dp ~ group, data = .) %>%
-  pander(., style = "multiline")
+  pander(., style = "rmarkdown")
 ```
 
 ![](README_files/figure-html/dPrime example-1.png)  
 
---------------------------------------------------------------
-     &nbsp;        Estimate   Std. Error   t value   Pr(>|t|) 
------------------ ---------- ------------ --------- ----------
-   **groupg2**     -0.5199     0.05746     -9.047   1.783e-05 
 
- **(Intercept)**    0.8185     0.04063      20.15   3.849e-08 
---------------------------------------------------------------
+|      &nbsp;       |  Estimate  |  Std. Error  |  t value  |  Pr(>|t|)  |
+|:-----------------:|:----------:|:------------:|:---------:|:----------:|
+|    **groupg2**    |  -0.5199   |   0.05746    |  -9.047   | 1.783e-05  |
+|  **(Intercept)**  |   0.8185   |   0.04063    |   20.15   | 3.849e-08  |
 
 Table: Fitting linear model: dp ~ group
