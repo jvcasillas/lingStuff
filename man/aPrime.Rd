@@ -17,8 +17,11 @@ aPrime(data, h, f)
 This function allows you to calculate A prime from a vector hits
 and a vector a false alarms.
 }
+\details{
+Note: If you need to subset (by subject or by group), use
+aPrime_() in conjunction with dplyr.
+}
 \examples{
-# Example
 # Create some data
 set.seed(1); library(dplyr)
 axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
@@ -29,12 +32,15 @@ axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
                           rbinom(1000, size = c(0, 1), prob = .4))
 )
 
+# Calculate A' on entire data frame
+aPrime(axb, hit, fa)
+
 # Calculate A' for each subject
 # by group, plot it, and run a
 # linear model
 axb \%>\%
   group_by(subj, group) \%>\%
-  summarize(ap = aPrime(., hit, fa)) \%T>\%
+  summarize(ap = aPrime_(., hit, fa)) \%T>\%
  {
   plot(ap ~ as.numeric(group), data = .,
        main = "A' as a function of group", xaxt = "n",

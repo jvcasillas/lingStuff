@@ -2,13 +2,15 @@
 #'
 #' This function allows you to calculate b from a vector hits 
 #' and a vector a false alarms.
+#'
+#' Note: If you need to subset (by subject or by group), use 
+#' b_() in conjunction with dplyr.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
 #' @keywords b prime
 #' @export
 #' @examples
-#' # Example
 #' # Create some data
 #' set.seed(1); library(dplyr)
 #' axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
@@ -19,12 +21,15 @@
 #'                           rbinom(1000, size = c(0, 1), prob = .4))
 #' )
 #' 
+#' # Calculate b on entire data frame
+#' b(axb, hit, fa)
+#'
 #' # Calculate b for each subject
 #' # by group, plot it, and run a 
 #' # linear model
 #' axb %>%
 #'   group_by(subj, group) %>%
-#'   summarize(b = b(., hit, fa)) %T>%
+#'   summarize(b = b_(., hit, fa)) %T>%
 #'  {
 #'   plot(b ~ as.numeric(group), data = ., 
 #'        main = "b as a function of group", xaxt = "n", 
@@ -35,8 +40,22 @@
 #'  lm(b ~ group, data = .) %>%
 #'  summary()
 
-
 b <- function(data, h, f){
+     hRate = mean(data$h)
+     faRate = mean(data$f) 
+     if(faRate <= .5 & hRate >= .5)
+       {
+         b <- (5 - 4 * hRate) / (1 + 4 * faRate)
+       } else if(faRate <= hRate & hRate <= .5)
+       {
+         b <-(hRate^2 + hRate) / (hRate^2 + faRate) 
+       } else { 
+         b <- ((1 - faRate)^2 + (1 - hRate)) / ((1 - faRate)^2 + (1 - faRate))
+       } 
+        return(b)
+}
+
+b_ <- function(data, h, f){
      hRate = mean(h)
      faRate = mean(f) 
      if(faRate <= .5 & hRate >= .5)

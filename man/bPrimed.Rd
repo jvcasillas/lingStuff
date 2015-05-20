@@ -15,10 +15,13 @@ bPrimed(data, h, f)
 }
 \description{
 This function allows you to calculate b double prime d from a vector hits
-and a vector a false alarms.
+and a vector of false alarms.
+}
+\details{
+Note: If you need to subset (by subject or by group), use
+bPrimed_() in conjunction with dplyr.
 }
 \examples{
-# Example
 # Create some data
 set.seed(1); library(dplyr)
 axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
@@ -29,12 +32,15 @@ axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
                           rbinom(1000, size = c(0, 1), prob = .4))
 )
 
+# Calculate b''d on entire data frame
+bPrimed(axb, hit, fa)
+
 # Calculate b''d for each subject
 # by group, plot it, and run a
 # linear model
 axb \%>\%
   group_by(subj, group) \%>\%
-  summarize(bdpd = bPrimed(., hit, fa)) \%T>\%
+  summarize(bdpd = bPrimed_(., hit, fa)) \%T>\%
  {
   plot(bdpd ~ as.numeric(group), data = .,
        main = "b''d as a function of group", xaxt = "n",

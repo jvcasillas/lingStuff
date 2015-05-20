@@ -18,9 +18,9 @@ This function will calculate d prime from a vector of hits
 and a vector of false alarms.
 }
 \details{
-If you need to subset (by subject or by group), use dPrime_()
-in conjunction with dplyr. This metric is common in
-discrimination experiments. Note: If your participants are
+This metric is common in discrimination experiments.
+Note: If you need to subset (by subject or by group), use
+dPrime_() in conjunction with dplyr. If your participants are
 at ceiling, you may want to consider another analysis.
 }
 \examples{
