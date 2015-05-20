@@ -35,7 +35,7 @@ axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
 )
 
 # Calculate d prime on entire data frame
-dprime(axb, hit, fa)
+dPrime(axb, hit, fa)
 
 
 # Calculate d prime for each subject by group, plot it,
