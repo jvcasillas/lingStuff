@@ -4,9 +4,8 @@
 #' and a vector of false alarms. 
 #' 
 #' This metric is common in discrimination experiments. 
-#' Note: If you need to subset (by subject or by group), use 
-#' dPrime_() in conjunction with dplyr. If your participants are
-#' at ceiling, you may want to consider another analysis.
+#' If your participants are at ceiling, you may want to consider 
+#' another analysis.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -22,10 +21,6 @@
 #'                   fa =  c(rbinom(1000, size = c(0, 1), prob = .3), 
 #'                           rbinom(1000, size = c(0, 1), prob = .4))
 #' )
-#' 
-#' # Calculate d prime on entire data frame
-#' dprime(axb, hit, fa)
-#'
 #'
 #' # Calculate d prime for each subject by group, plot it, 
 #' # and run a linear model
@@ -42,8 +37,8 @@
 #'  lm(dp ~ group, data = .) %>%
 #'  summary()
 
-dPrime <- function(data, h, f){
-  dp = qnorm(mean(data$h)) - qnorm(mean(data$f))
+
+dPrime_ <- function(data, h, f){
+  dp = qnorm(mean(h)) - qnorm(mean(f))
   return(dp)
 }
-

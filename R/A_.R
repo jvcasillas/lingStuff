@@ -2,9 +2,6 @@
 #'
 #' This function allows you to calculate A from from a vector hits 
 #' and a vector a false alarms.
-#'
-#' Note: If you need to subset (by subject or by group), use 
-#' A_() in conjunction with dplyr.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -20,9 +17,6 @@
 #'                   fa =  c(rbinom(1000, size = c(0, 1), prob = .3), 
 #'                           rbinom(1000, size = c(0, 1), prob = .4))
 #' )
-#' 
-#' # Calculate A on entire data frame
-#' A(axb, hit, fa)
 #'
 #' # Calculate A for each subject
 #' # by group, plot it, and run a 
@@ -40,9 +34,9 @@
 #'  lm(A ~ group, data = .) %>%
 #'  summary()
 
-A <- function(data, h, f){
-    hRate = mean(data$h)
-    faRate = mean(data$f) 
+A_ <- function(data, h, f){
+    hRate = mean(h)
+    faRate = mean(f) 
     if (faRate <= .5 & hRate >= .5)
       {
        a <- .75 + (hRate - faRate) / 4 - faRate * (1 - hRate)

@@ -2,9 +2,6 @@
 #'
 #' This function allows you to calculate b double prime d from a vector hits 
 #' and a vector of false alarms.
-#' 
-#' Note: If you need to subset (by subject or by group), use 
-#' bPrimed_() in conjunction with dplyr.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -20,9 +17,6 @@
 #'                   fa =  c(rbinom(1000, size = c(0, 1), prob = .3), 
 #'                           rbinom(1000, size = c(0, 1), prob = .4))
 #' )
-#' 
-#' # Calculate b''d on entire data frame
-#' bPrimed(axb, hit, fa)
 #' 
 #' # Calculate b''d for each subject
 #' # by group, plot it, and run a 
@@ -40,9 +34,9 @@
 #'  lm(bdpd ~ group, data = .) %>%
 #'  summary()
 
-bPrimed <- function(data, h, f){
-    hRate = mean(data$h)
-    faRate = mean(data$f) 
+bPrimed_ <- function(data, h, f){
+    hRate = mean(h)
+    faRate = mean(f) 
     bd <- ((1 - hRate) * (1 - faRate) - (hRate * faRate)) / ((1 - hRate) * (1 - faRate) + (hRate * faRate))
     return(bd)
 }
