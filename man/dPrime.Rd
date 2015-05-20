@@ -7,7 +7,7 @@
 dPrime(data, h, f)
 }
 \arguments{
-\item{data}{A data frame (used with dplyr).}
+\item{data}{A data frame.}
 
 \item{h}{A vector of hits (0 = miss, 1 = hit).}
 
@@ -15,17 +15,15 @@ dPrime(data, h, f)
 }
 \description{
 This function will calculate d prime from a vector of hits
-and a vector of false alarms. If you need to subset
-(by subject or by group), use dPrime_() in conjunction with
-dplyr
+and a vector of false alarms.
 }
 \details{
-This metric is common in discrimination experiments.
-Note: If your participants are at ceiling, you may
-want to consider another analysis.
+If you need to subset (by subject or by group), use dPrime_()
+in conjunction with dplyr. This metric is common in
+discrimination experiments. Note: If your participants are
+at ceiling, you may want to consider another analysis.
 }
 \examples{
-# Example
 # Create some data
 set.seed(1); library(dplyr)
 axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
@@ -40,9 +38,8 @@ axb <- data.frame(subj = sort(rep(1:10, each = 20, times = 10)),
 dprime(axb, hit, fa)
 
 
-# Calculate d prime for each subject
-# by group, plot it, and run a
-# linear model
+# Calculate d prime for each subject by group, plot it,
+# and run a linear model
 axb \%>\%
   group_by(subj, group) \%>\%
   summarize(dp = dPrime_(., hit, fa)) \%T>\%
