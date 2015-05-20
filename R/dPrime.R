@@ -1,10 +1,14 @@
 #' Function for calculating d prime
 #'
-#' This function will calculate d prime from a vector hits 
-#' and a vector a false alarms. This metric is common in 
-#' discrimination experiments. Note: If your participants 
-#' are at ceiling, you may want to consider another analysis.
-#' @param data A data frame.
+#' This function will calculate d prime from a vector of hits 
+#' and a vector of false alarms. If you need to subset 
+#' (by subject or by group), use dPrime_() in conjunction with
+#' dplyr
+#'
+#' This metric is common in discrimination experiments. 
+#' Note: If your participants are at ceiling, you may 
+#' want to consider another analysis.
+#' @param data A data frame (used with dplyr).
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
 #' @keywords d prime
@@ -21,12 +25,16 @@
 #'                           rbinom(1000, size = c(0, 1), prob = .4))
 #' )
 #' 
+#' # Calculate d prime on entire data frame
+#' dprime(axb, hit, fa)
+#'
+#'
 #' # Calculate d prime for each subject
 #' # by group, plot it, and run a 
 #' # linear model
 #' axb %>%
 #'   group_by(subj, group) %>%
-#'   summarize(dp = dPrime(., hit, fa)) %T>%
+#'   summarize(dp = dPrime_(., hit, fa)) %T>%
 #'  {
 #'   plot(dp ~ as.numeric(group), data = ., 
 #'        main = "d' as a function of group", xaxt = "n", 
@@ -38,7 +46,11 @@
 #'  summary()
 
 dPrime <- function(data, h, f){
-  hRate = mean(h)
-  faRate = mean(f) 
-  dp = qnorm(hRate) - qnorm(faRate)
+  dp = qnorm(mean(data$h)) - qnorm(mean(data$f))
+  return(dp)
+}
+
+dPrime_ <- function(data, h, f){
+  dp = qnorm(mean(h)) - qnorm(mean(f))
+  return(dp)
 }
