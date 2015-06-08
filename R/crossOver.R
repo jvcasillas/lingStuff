@@ -29,4 +29,5 @@
 
 crossOver <- function(x) {
     cross <- (summary(x)$coefficients[1, 1] / summary(x)$coefficients[2, 1] * -1)
+    return(cross)
 }
