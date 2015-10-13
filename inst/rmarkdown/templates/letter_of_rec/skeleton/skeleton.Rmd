@@ -1,28 +1,22 @@
 ---
-author:
-  - name: FirstName LastName
-    affiliation: University/Company
-    address: >
-      First line
-      Second line
-    email: name@company.com
-    url: http://rstudio.com
-  - name: Second Author
-    affiliation: Affiliation
-title:
-  formatted: "A Capitalized Title: Something about a Package \\pkg{foo}"
-  # If you use tex in the formatted title, also supply version without
-  plain:     "A Capitalized Title: Something about a Package foo"
-  # For running headers, if needed
-  short:     "\\pkg{foo}: A Capitalized Title"
-abstract: >
-  The abstract of the article.
-keywords:
-  # at least one keyword must be supplied
-  formatted: [keywords, not capitalized, "\\proglang{Java}"]
-  plain:     [keywords, not capitalized, Java]
+author: Joseph V. Casillas
 preamble: >
-  \usepackage{amsmath}
+  \usepackage[utf8]{inputenc}
+  \usepackage{times}
+  \usepackage{hyperref}
+  \usepackage[hmargin=2.54cm,vmargin=2.54cm]{geometry}
+
+  \usepackage{tipa}
+  \usepackage{graphicx}
+  \usepackage{textcomp}
+
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead{} % Clear all header fields 
+  \fancyhead[C]{\includegraphics{uaheader.pdf}}
+  \fancyfoot{} % Clear all footer fields
+  \fancyfoot[L]{\includegraphics{uafooter.pdf}}
 output: pdf_document
 ---
 
@@ -31,36 +25,52 @@ output: pdf_document
 \vspace{.25in}
 
 
-\noindent University of Arizona \\
-Department of Spanish and Portuguese \\
-Modern Languages 209 \\
-Tucson, AZ 85721\\
+University of Arizona  
+Department of Spanish and Portuguese  
+Modern Languages 209  
+Tucson, AZ 85721  
 
-\noindent To whom it may concern:
+To whom it may concern:
 
 \vspace{.25in}
 
-%Main body (fold)
-\noindent The purpose of the present letter is to recommend that Joel Saldaña Pérez be considered for the position of Academic Skills Coach in the University of Arizona Think Tank. I had the pleasure of having Joel in my Spanish 343 class this Fall semester of 2011 and can attest to his commitment to excellence as a student. The class that I teach, Introduction to Spanish Phonetcs and Phonology, is by no means an easy course. Joel’s dedication to learning the intricate details of the Spanish language is an excellent example of his intellectual capabilities and his excellent work ethic.\\
 
-\noindent Joel is an intelligent, outgoing student and I feel that he will have no trouble working as an academic skills coach. In fact, because of his outgoing personality and academic potential, I feel that Joel is the ideal candidate for this type of position. For these very reasons he was selected to work personally with the Director of the Spanish for Heritage Language Learners Program, Sara Beaudrie, as a preceptor in her Spanish Phonetics course for the Spring Semester of 2012.\\
+The purpose of the present letter is to recommend that Joel Saldaña Pérez be 
+considered for the position of Academic Skills Coach in the University of 
+Arizona Think Tank. I had the pleasure of having Joel in my Spanish 343 class 
+this Fall semester of 2011 and can attest to his commitment to excellence as a 
+student. The class that I teach, Introduction to Spanish Phonetcs and Phonology, 
+is by no means an easy course. Joel’s dedication to learning the intricate 
+details of the Spanish language is an excellent example of his intellectual 
+capabilities and his excellent work ethic.  
 
-\noindent I hope that you will consider Joel for the position of Academic Skills Coach. If you have any questions with regards to the aforementioned information or any other concerns, please do not hesitate to contact me at your earliest convenience.\\
+Joel is an intelligent, outgoing student and I feel that he will have no trouble 
+working as an academic skills coach. In fact, because of his outgoing 
+personality and academic potential, I feel that Joel is the ideal candidate for 
+this type of position. For these very reasons he was selected to work personally 
+with the Director of the Spanish for Heritage Language Learners Program, Sara 
+Beaudrie, as a preceptor in her Spanish Phonetics course for the Spring Semester 
+of 2012.  
 
-\noindent Thank you for your consideration.\\
-%Main body (end)
+I hope that you will consider Joel for the position of Academic Skills Coach. If 
+you have any questions with regards to the aforementioned information or any 
+other concerns, please do not hesitate to contact me at your earliest 
+convenience.  
 
-\noindent Best regards, \\
+Thank you for your consideration.  
+
+
+Best regards,  
 
 \vspace{.8in}
 
-\noindent \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
-\noindent Joseph V. Casillas \\ 
-Graduate Assistant in Teaching \\
-Department of Spanish and Portuguese \\
-University of Arizona \\
-Office: Modern Languages 209 \\
-Phone: (520) 621-4702 \\
-\href{mailto:jvcasill@email.arizona.edu}{jvcasill@email.arizona.edu} \\
-\href{http://www.u.arizona.edu/~jvcasill/}{http://www.u.arizona.edu/\hspace{-.7mm}\texttildelow jvcasill/}\\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+Joseph V. Casillas  
+Graduate Assistant in Teaching  
+Department of Spanish and Portuguese  
+University of Arizona  
+Office: Modern Languages 209  
+Phone: (520) 621-4702  
+\href{mailto:jvcasill@email.arizona.edu}{jvcasill@email.arizona.edu}  
+[www.jvcasillas.com](www.jvcasillas.com)
 

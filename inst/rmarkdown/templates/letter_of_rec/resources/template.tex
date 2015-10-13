@@ -1,66 +1,8 @@
 \documentclass[12pt]{article}
-\usepackage{times}
-\usepackage{hyperref}
-\usepackage[hmargin=2.54cm,vmargin=2.54cm]{geometry}
-\usepackage[utf8]{inputenc}
 
-\usepackage{tipa}
-\usepackage{graphicx}
-\usepackage{textcomp}
-
-\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-\pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\headrulewidth}{0pt} % customise the layout...
-\fancyhead{} % Clear all header fields 
-\fancyhead[C]{\includegraphics{uaheader.pdf}}% 
-\fancyfoot{} % Clear all footer fields
-\fancyfoot[L]{\includegraphics{uafooter.pdf}}% 
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\author{
-$for(author)$$author.name$\\$author.affiliation$$sep$ \And $endfor$
-}
-\title{$title.formatted$}
-$if(keywords.formatted)$
-\Keywords{$for(keywords.formatted)$$keywords.formatted$$sep$, $endfor$}
-$endif$
-
-\Abstract{
-$abstract$
-}
-
-\Plainauthor{$for(author)$$author.name$$sep$, $endfor$}
-$if(title.plain)$
-\Plaintitle{$title.plain$}
-$endif$
-$if(title.short)$
-\Shorttitle{$title.short$}
-$endif$
-$if(keywords.plain)$
-\Plainkeywords{$for(keywords.plain)$$keywords.plain$$sep$, $endfor$}
-$endif$
-
-%% publication information
-%% \Volume{50}
-%% \Issue{9}
-%% \Month{June}
-%% \Year{2012}
-\Submitdate{$submitdate$}
-%% \Acceptdate{2012-06-04}
-
-\Address{
-$for(author)$
-  $if(author.address)$
-  $author.name$\\
-  $author.affiliation$\\
-  $author.address$\\
-  $if(author.email)$E-mail: $author.email$\\$endif$
-  $if(author.url)$URL: $author.url$\\~\\$endif$
-  $endif$
-$endfor$
-}
 
 $preamble$
 
