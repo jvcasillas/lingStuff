@@ -1,6 +1,6 @@
 Package: lingStuff
 Title: Special Tools and Gems for Linguistics Related Stuff
-Version: 0.0.0.95
+Version: 0.0.0.96
 Authors@R: person("Joseph", "Casillas", , "jvcasill@email.arizona.edu", role = c("aut", "cre"))
 Description: This package loads a series of functions that I find useful when tidying, cleaning plotting and analyzing linguistic related data in R. Some are mine, and others were taken and adapted from other packages/people.
 Depends: R (>= 3.1.3)
