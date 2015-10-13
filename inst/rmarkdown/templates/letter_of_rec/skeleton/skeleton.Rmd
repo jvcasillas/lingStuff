@@ -1,7 +1,6 @@
 ---
 author: Joseph V. Casillas
-header-includes:
-   - \usepackage[utf8]{inputenc}
+geometry: top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm
 output:
     pdf_document:
         includes:
