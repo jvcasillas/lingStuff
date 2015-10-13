@@ -1,22 +1,8 @@
 \documentclass[12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\usepackage[hmargin=2.54cm,vmargin=2.54cm]{geometry}
-
-\usepackage{tipa}
-\usepackage{graphicx}
-\usepackage{textcomp}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead{} % Clear all header fields 
-\fancyhead[C]{\includegraphics{uaheader.pdf}}
-\fancyfoot{} % Clear all footer fields
-\fancyfoot[L]{\includegraphics{uafooter.pdf}}
-
-$preamble$
+$for(header-includes)$
+$header-includes$
+$endfor$
 
 \begin{document}
 

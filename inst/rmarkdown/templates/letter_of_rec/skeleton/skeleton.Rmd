@@ -1,8 +1,11 @@
 ---
 author: Joseph V. Casillas
-preamble: >
-  \usepackage{times}
-output: pdf_document
+header-includes:
+   - \usepackage[utf8]{inputenc}
+output:
+    pdf_document:
+        includes:
+            in_header: mystyles.sty
 ---
 
 
