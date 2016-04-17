@@ -1,5 +1,6 @@
 Package: lingStuff
 Title: Tools and Gems for Linguistics Related Research
+Date: 2016
 Version: 0.0.0.96
 Authors@R: person("Joseph V.", "Casillas", , "jvcasill@email.arizona.edu", role = c("aut", "cre"))
 Description: This package loads a series of functions that I find useful when
