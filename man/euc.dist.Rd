@@ -4,7 +4,7 @@
 \alias{euc.dist}
 \title{A euclidean distance function}
 \usage{
-euc.dist(x1, x2)
+euc.dist(data, var1, var2)
 }
 \arguments{
 \item{x1}{Numeric vector (generally f1).}
@@ -15,7 +15,18 @@ euc.dist(x1, x2)
 This function allows you to calculate the euclidean distance between two vectors
 }
 \examples{
-euc.dist(rnorm(10, 10, 2), rnorm(10, 20, 2))
+# Create some data
+df <- data.frame(vowel = gl(n = 2, k = 5, labels = c('a', 'o')),
+                 var1 = rnorm(10, 10, 2), 
+                 var2 = rnorm(10, 20, 2))
+
+# Calculate euc.dist on entire data frame
+euc.dist(data = df, var1 = var1, var2 = var2)
+
+# Calculate euc.dist for each vowel
+df \%>\%
+ group_by(., vowel) \%>\%
+ summarise(euc = euc.dist(., var1 = var1, var2 = var2))
 }
 \keyword{distance}
 \keyword{euclidean}

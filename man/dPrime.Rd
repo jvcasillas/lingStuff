@@ -19,9 +19,8 @@ and a vector of false alarms.
 }
 \details{
 This metric is common in discrimination experiments. 
-Note: If you need to subset (by subject or by group), use 
-dPrime_() in conjunction with dplyr. If your participants are
-at ceiling, you may want to consider another analysis.
+Note: If your participants are at ceiling, you may want to 
+consider another analysis.
 }
 \examples{
 # Create some data
@@ -42,7 +41,7 @@ dPrime(axb, hit, fa)
 # and run a linear model
 axb \%>\%
   group_by(subj, group) \%>\%
-  summarize(dp = dPrime_(., hit, fa)) \%T>\%
+  summarize(dp = dPrime(., hit, fa)) \%T>\%
  {
   plot(dp ~ as.numeric(group), data = ., 
        main = "d' as a function of group", xaxt = "n", 

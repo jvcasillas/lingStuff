@@ -4,9 +4,8 @@
 #' and a vector of false alarms. 
 #' 
 #' This metric is common in discrimination experiments. 
-#' Note: If you need to subset (by subject or by group), use 
-#' dPrime_() in conjunction with dplyr. If your participants are
-#' at ceiling, you may want to consider another analysis.
+#' Note: If your participants are at ceiling, you may want to 
+#' consider another analysis.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -31,7 +30,7 @@
 #' # and run a linear model
 #' axb %>%
 #'   group_by(subj, group) %>%
-#'   summarize(dp = dPrime_(., hit, fa)) %T>%
+#'   summarize(dp = dPrime(., hit, fa)) %T>%
 #'  {
 #'   plot(dp ~ as.numeric(group), data = ., 
 #'        main = "d' as a function of group", xaxt = "n", 
@@ -43,7 +42,17 @@
 #'  summary()
 
 dPrime <- function(data, h, f){
-  dp = qnorm(mean(data$h)) - qnorm(mean(data$f))
-  return(dp)
+    if(!is.data.frame(data)) {
+    stop('I am so sorry, but this function requires a dataframe\n',
+         'You have provided an object of class: ', class(data)[1])
+    }
+
+    # Make columns of dataframe available w/o quotes
+    arguments <- as.list(match.call())
+    hits = eval(arguments$h, data)
+    fas = eval(arguments$f, data)
+
+    dp = qnorm(mean(hits)) - qnorm(mean(fas))
+    return(dp)
 }
 

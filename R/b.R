@@ -3,8 +3,6 @@
 #' This function allows you to calculate b from a vector hits 
 #' and a vector a false alarms.
 #'
-#' Note: If you need to subset (by subject or by group), use 
-#' b_() in conjunction with dplyr.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -29,7 +27,7 @@
 #' # linear model
 #' axb %>%
 #'   group_by(subj, group) %>%
-#'   summarize(b = b_(., hit, fa)) %T>%
+#'   summarize(b = b(., hit, fa)) %T>%
 #'  {
 #'   plot(b ~ as.numeric(group), data = ., 
 #'        main = "b as a function of group", xaxt = "n", 
@@ -41,16 +39,27 @@
 #'  summary()
 
 b <- function(data, h, f){
-     hRate = mean(data$h)
-     faRate = mean(data$f) 
-     if(faRate <= .5 & hRate >= .5)
-       {
-         b <- (5 - 4 * hRate) / (1 + 4 * faRate)
-       } else if(faRate <= hRate & hRate <= .5)
-       {
-         b <-(hRate^2 + hRate) / (hRate^2 + faRate) 
-       } else { 
-         b <- ((1 - faRate)^2 + (1 - hRate)) / ((1 - faRate)^2 + (1 - faRate))
-       } 
-        return(b)
+    if(!is.data.frame(data)) {
+    stop('I am so sorry, but this function requires a dataframe\n',
+         'You have provided an object of class: ', class(data)[1])
+    }
+
+    # Make columns of dataframe available w/o quotes
+    arguments <- as.list(match.call())
+    hits = eval(arguments$h, data)
+    fas = eval(arguments$f, data)
+
+    hRate = mean(hits)
+    faRate = mean(fas) 
+
+    if(faRate <= .5 & hRate >= .5)
+      {
+        b <- (5 - 4 * hRate) / (1 + 4 * faRate)
+      } else if(faRate <= hRate & hRate <= .5)
+      {
+        b <-(hRate^2 + hRate) / (hRate^2 + faRate) 
+      } else { 
+        b <- ((1 - faRate)^2 + (1 - hRate)) / ((1 - faRate)^2 + (1 - faRate))
+      } 
+      return(b)
 }

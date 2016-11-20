@@ -17,10 +17,6 @@ b(data, h, f)
 This function allows you to calculate b from a vector hits 
 and a vector a false alarms.
 }
-\details{
-Note: If you need to subset (by subject or by group), use 
-b_() in conjunction with dplyr.
-}
 \examples{
 # Create some data
 set.seed(1); library(dplyr)
@@ -40,7 +36,7 @@ b(axb, hit, fa)
 # linear model
 axb \%>\%
   group_by(subj, group) \%>\%
-  summarize(b = b_(., hit, fa)) \%T>\%
+  summarize(b = b(., hit, fa)) \%T>\%
  {
   plot(b ~ as.numeric(group), data = ., 
        main = "b as a function of group", xaxt = "n", 

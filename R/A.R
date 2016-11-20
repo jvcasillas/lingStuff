@@ -3,8 +3,6 @@
 #' This function allows you to calculate A from from a vector hits 
 #' and a vector a false alarms.
 #'
-#' Note: If you need to subset (by subject or by group), use 
-#' A_() in conjunction with dplyr.
 #' @param data A data frame.
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
@@ -29,7 +27,7 @@
 #' # linear model
 #' axb %>%
 #'   group_by(subj, group) %>%
-#'   summarize(A = A_(., hit, fa)) %T>%
+#'   summarize(A = A(., hit, fa)) %T>%
 #'  {
 #'   plot(A ~ as.numeric(group), data = ., 
 #'        main = "A as a function of group", xaxt = "n", 
@@ -41,8 +39,18 @@
 #'  summary()
 
 A <- function(data, h, f){
-    hRate = mean(data$h)
-    faRate = mean(data$f) 
+    if(!is.data.frame(data)) {
+    stop('I am so sorry, but this function requires a dataframe\n',
+         'You have provided an object of class: ', class(data)[1])
+    }
+
+    # Make columns of dataframe available w/o quotes
+    arguments <- as.list(match.call())
+    hits = eval(arguments$h, data)
+    fas = eval(arguments$f, data)
+
+    hRate = mean(hits)
+    faRate = mean(fas) 
     if (faRate <= .5 & hRate >= .5)
       {
        a <- .75 + (hRate - faRate) / 4 - faRate * (1 - hRate)
