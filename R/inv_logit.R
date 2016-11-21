@@ -27,7 +27,10 @@
 
 
 inv_logit <- function(mod) {
-
+    
+    # Load dplyr
+    require(dplyr)
+    
     # Check to see if mod = glm object, if not, stop 
     if (class(mod)[1] == 'glm')
         {
