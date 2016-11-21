@@ -27,7 +27,25 @@
 #' abline(h = 0.5, v = 0)
 
 
-crossOver <- function(x) {
-    cross <- (summary(x)$coefficients[1, 1] / summary(x)$coefficients[2, 1] * -1)
-    return(cross)
+crossOver <- function(mod, iv) {
+
+    # Check to see if mod = glm object, if not, stop 
+    if (class(mod)[1] == 'glm')
+        {
+            cross <- (summary(mod)$coefficients[1, 1] / summary(mod)$coefficients[iv, 1] * -1)
+            return(cross[-1])
+        } else {
+            stop('Error: this function requires a glm object\n',
+                 'You have provided an object of class: ', class(mod)[1])
+        }
 }
+
+
+
+
+
+
+
+
+
+

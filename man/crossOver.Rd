@@ -4,7 +4,7 @@
 \alias{crossOver}
 \title{A cross over function}
 \usage{
-crossOver(x)
+crossOver(mod, iv)
 }
 \arguments{
 \item{x}{A glm object}
