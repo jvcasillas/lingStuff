@@ -4,7 +4,7 @@
 \alias{biVarPlot}
 \title{A bivariate regression function}
 \usage{
-biVarPlot(data, x, y)
+biVarPlot(data, x, y, family = "Gaussian")
 }
 \arguments{
 \item{data}{A data frame.}
@@ -12,17 +12,36 @@ biVarPlot(data, x, y)
 \item{x}{An independent variable}
 
 \item{y}{A dependent variable}
+
+\item{family}{A distribution ('gaussian', 'binomial', or 'poisson')}
 }
 \description{
-This function will fit a linear model to two continuous 
-variables and plot the outcome.
+This function will fit a linear model to two variables. The 
+criterion can be continuous or binary. For logistic regression, 
+set family = 'binomial'. For poisson regression, set family = 
+'poisson'. If omitted, family will default to 'gaussian' for 
+standard linear regression.
 }
 \examples{
+# Linear regression
 biVarPlot(data = cars, x = dist, y = speed)
 biVarPlot(data = mtcars, x = cyl, y = mpg)
 biVarPlot(data = Orange, x = age, y = circumference)
 biVarPlot(data = ChickWeight, x = Time, y = weight)
 biVarPlot(data = USArrests, x = UrbanPop, y = Rape)
+
+# Logistic regression
+vot  <- rnorm(20, 15, 5)
+vot  <- sort(vot)
+phon <- c(0,1,0,0,0,0,0,1,0,1,0,1,0,1,1,1,1,1,1,1)
+df1  <- data.frame(vot, phon)
+biVarPlot(data = df1, x = vot, y = phon, family = 'binomial')
+
+# Poisson regression
+time   <- 1:10
+counts <- c(18, 17, 21, 20, 25, 27, 30, 43, 52, 50)
+df2    <- data.frame(time, counts)
+biVarPlot(data = df2, x = time, y = counts, family = 'poisson')
 }
 \keyword{bivariate}
 \keyword{regression}

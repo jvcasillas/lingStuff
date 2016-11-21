@@ -12,15 +12,15 @@
 #'                  var2 = rnorm(10, 20, 2))
 #' 
 #' # Calculate euc.dist on entire data frame
-#' euc.dist(data = df, var1 = var1, var2 = var2)
+#' euc_dist(data = df, var1 = var1, var2 = var2)
 #' 
 #' # Calculate euc.dist for each vowel
 #' df %>%
 #'  group_by(., vowel) %>%
-#'  summarise(euc = euc.dist(., var1 = var1, var2 = var2))
+#'  summarise(euc = euc_dist(., var1 = var1, var2 = var2))
 
 
-euc.dist <- function(data, var1, var2){
+euc_dist <- function(data, var1, var2){
     if(!is.data.frame(data)) {
     stop('I am so sorry, but this function requires a dataframe\n',
          'You have provided an object of class: ', class(data)[1])
