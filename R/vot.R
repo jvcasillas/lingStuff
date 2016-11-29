@@ -2,9 +2,9 @@
 #'
 #' A dataset containing raw voice onset time (VOT) data in ms 
 #' from three groups. This data was simulated in R based of 
-#' the data set used in Casillas, Díaz, & Simonet (2015).
+#' the data set used in Casillas, Diaz, & Simonet (2015).
 #'  
-#' Casillas, J. V., Díaz, Y. and Simonet, M. (2015). "Acoustics of 
+#' Casillas, J. V., Diaz, Y. and Simonet, M. (2015). "Acoustics of 
 #' Spanish and English coronal stops". In ICPhS 18. Ed. by T. S. C. 
 #' for ICPhS 2015. Proceedings of the 18th International Congress 
 #' of Phonetic Sciences. University of Glasgow: Glasgow. 
