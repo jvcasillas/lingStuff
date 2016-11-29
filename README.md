@@ -5,10 +5,13 @@ lingStuff
 This is a collection of functions that I often use 
 in my research. Some are borrowed and edited, others 
 are my own. Feel free to fork and edit as you see fit. 
+The package now includes sample data sets for teaching 
+purposes.
 
 ## Installation
 
-In order to install this package you must have `devtools`. Don't know if you have `devtools`? Copy and paste this into your console:
+In order to install this package you must have `devtools`. Don't know if you 
+have `devtools`? Copy and paste this into your console:
 
 
 ```r
@@ -26,7 +29,8 @@ library(devtools)
 install_github("jvcasill/lingStuff")
 ```
 
-In the case that you already have `devtools`, then just copy and paste lines 2 and 3 of the above code chunk. 
+In the case that you already have `devtools`, then just copy and paste lines 2 
+and 3 of the above code chunk. 
 
 ## To add
 
