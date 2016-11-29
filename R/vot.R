@@ -14,7 +14,7 @@
 #' \describe{
 #'   \item{participant}{subject id labels}
 #'   \item{language}{language spoken, spanish/english}
-#'   \item{item}{target work}
+#'   \item{item}{target word}
 #'   \item{repitition}{iteration of item}
 #'   \item{vot}{vot values, in ms}
 #' }
