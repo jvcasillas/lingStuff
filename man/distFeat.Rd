@@ -4,7 +4,7 @@
 \name{distFeat}
 \alias{distFeat}
 \title{Distinctive features of Spanish allphones}
-\format{A data frame with 51 rows and 26 variables:}
+\format{A list of two dataframes.}
 \source{
 \url{http://www.jvcasillas.com/}
 }
@@ -12,8 +12,9 @@
 distFeat
 }
 \description{
-A data frame containing +/-/0 specifications for the distinctive 
-features of Spanish allophones. Based on the table by Casillas 
+A list of two dataframes containing +/-/0 specifications for the 
+distinctive features of Spanish allophones and definitions of the 
+distinctice features. Based on the table by Casillas 
 & Bessett (2013) published in Cedeño, R. A. N., Colina, S., & 
 Bradley, T. G. (Eds.). Fonología generativa contemporánea de la 
 lengua española. Georgetown University Press.
