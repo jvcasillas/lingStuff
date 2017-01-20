@@ -1,63 +1,136 @@
 ---
-author: Joseph V. Casillas
-geometry: top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm
+title:
+author: ""
+date: ""
+fontsize: 10pt
+geometry: left=1in,right=1in,top=0.5in,bottom=1in
 output:
-    pdf_document:
-        includes:
-            in_header: mystyles.sty
+  pdf_document:
+    toc: no
+header-includes:
+    - \usepackage{fancyhdr}
+    - \usepackage{varwidth}
 ---
 
+\pagestyle{fancyplain}
+\lhead{}
+\chead{\includegraphics[width=1.1\textwidth]{RUheader.png}}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\fancyheadoffset{0.5in}
+\renewcommand{\headrulewidth}{0pt}
 
-\phantom{hola}
-\vspace{.25in}
 
 
-University of Arizona  
+\vspace{1.5in}
+
+\noindent Rutgers University  
 Department of Spanish and Portuguese  
-Modern Languages 209  
-Tucson, AZ 85721  
+ADDRESS HERE  
+New Brunswick, NJ 08901  
 
-To whom it may concern:
+\noindent To whom it may concern:
 
-\vspace{.25in}
-
-
-The purpose of the present letter is to recommend that GOOD STUDENT be 
-considered for the position of Academic Skills Coach in the University of 
-Arizona Think Tank. I had the pleasure of having GOOD in my Spanish 343 class 
-this Fall semester of 2011 and can attest to his commitment to excellence as a 
-student. The class that I teach, Introduction to Spanish Phonetcs and Phonology, 
-is by no means an easy course. STUDENT's dedication to learning the intricate 
-details of the Spanish language is an excellent example of his intellectual 
-capabilities and his excellent work ethic.  
-
-STUDENT is an intelligent, outgoing student and I feel that he will have no trouble 
-working as an academic skills coach. In fact, because of his outgoing 
-personality and academic potential, I feel that STUDENT is the ideal candidate for 
-this type of position. For these very reasons he was selected to work personally 
-with the Director of the Spanish for Heritage Language Learners Program, Sara 
-Beaudrie, as a preceptor in her Spanish Phonetics course for the Spring Semester 
-of 2012.  
-
-I hope that you will consider STUDENT for the position of Academic Skills Coach. If 
-you have any questions with regards to the aforementioned information or any 
-other concerns, please do not hesitate to contact me at your earliest 
-convenience.  
-
-Thank you for your consideration.  
+\vspace{.15in}
 
 
-Best regards,  
+\noindent Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
 
-\vspace{.8in}
+\noindent Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
 
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
-Joseph V. Casillas  
-Graduate Assistant in Teaching  
-Department of Spanish and Portuguese  
-University of Arizona  
-Office: Modern Languages 209  
-Phone: (520) 621-4702  
-\href{mailto:jvcasill@email.arizona.edu}{jvcasill@email.arizona.edu}  
-[www.jvcasillas.com](www.jvcasillas.com)
+\noindent Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\noindent Best regards,  
+
+\vspace{.75in}
+
+\noindent \rule{5cm}{0.4pt}  
+\noindent Joseph V. Casillas, PhD  
+Assistant Professor of Hispanic Linguistics  
+Rutgers University $|$ Department of Spanish and Portuguese  
+\href{mailto:joseph.casillas@rutgers.edu}{joseph.casillas@rutgers.edu}  
+\href{http://www.jvcasillas.com/}{http://www.jvcasillas.com}  
+
+
 
