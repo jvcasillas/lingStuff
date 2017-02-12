@@ -48,4 +48,3 @@ axb \%>\%
  summary()
 }
 \keyword{A}
-

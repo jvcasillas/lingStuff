@@ -45,4 +45,3 @@ biVarPlot(data = df2, x = time, y = counts, family = 'poisson')
 }
 \keyword{bivariate}
 \keyword{regression}
-

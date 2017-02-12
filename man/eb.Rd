@@ -22,4 +22,3 @@ eb(mtcars$mpg, as.factor(mtcars$cyl), ylab = "Miles per gallon", xlab = "cyl")
 }
 \keyword{bars}
 \keyword{error}
-

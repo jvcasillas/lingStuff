@@ -35,4 +35,3 @@ abline(v = crossOver(glm), lty = 2, lwd = 0.75)
 abline(h = 0.5, v = 0)
 }
 \keyword{crossover}
-

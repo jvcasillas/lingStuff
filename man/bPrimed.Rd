@@ -51,4 +51,3 @@ axb \%>\%
 \keyword{d}
 \keyword{double}
 \keyword{prime}
-

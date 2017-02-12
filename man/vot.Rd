@@ -30,4 +30,3 @@ of Phonetic Sciences. University of Glasgow: Glasgow.
 http://www.icphs2015.info, ISSN: 241-0669, pp. 1-5.
 }
 \keyword{datasets}
-

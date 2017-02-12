@@ -20,4 +20,3 @@ Bradley, T. G. (Eds.). Fonología generativa contemporánea de la
 lengua española. Georgetown University Press.
 }
 \keyword{datasets}
-

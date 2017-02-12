@@ -20,4 +20,3 @@ with subdirectories, and .Rmd and .R templates.
 create_project(name = 'myProject', type = 'html')
 }
 \keyword{projects}
-

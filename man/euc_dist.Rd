@@ -30,4 +30,3 @@ df \%>\%
 }
 \keyword{distance}
 \keyword{euclidean}
-

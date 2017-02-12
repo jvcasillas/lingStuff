@@ -35,4 +35,3 @@ inv_logit(testLM) # Gives an error
 }
 \keyword{inverse}
 \keyword{logit}
-
