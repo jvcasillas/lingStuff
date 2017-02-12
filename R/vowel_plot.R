@@ -15,13 +15,16 @@
 #' @export
 #' @examples
 #' # Vowel plot without grouping variable
-#' v_plot(data = vowel_data, f1 = 'f1', f2 = 'f2', vowel = 'vowel', group = NULL)
+#' vowel_plot(data = vowel_data, vowel = 'vowel', f1 = 'f1', f2 = 'f2', group = NULL)
 #' 
 #' # Vowel plot with grouping variable
-#' v_plot(data = vowel_data, f1 = 'f1', f2 = 'f2', vowel = 'vowel', group = 'gender')
+#' vowel_plot(data = vowel_data, vowel = 'vowel', f1 = 'f1', f2 = 'f2', group = 'gender')
 
 
-v_plot <- function(data, vowel, f1, f2, group = NULL) {
+vowel_plot <- function(data, vowel, f1, f2, group = NULL) {
+
+  # Load ggplot
+  require(ggplot2)
 
   # Check inputs for data frame 
   if(!is.data.frame(data)) {
