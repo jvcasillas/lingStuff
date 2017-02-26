@@ -21,7 +21,8 @@
 #' lm_ex(n = 55, intercept = 25, slope = -5, sigma = 0.75)
 
 
-lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5, custAxis = FALSE, xlim, ylim){
+lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5, 
+				  custAxis = FALSE, xlim = NULL, ylim = NULL){
   
   # Load ggplot
   require(ggplot2)
