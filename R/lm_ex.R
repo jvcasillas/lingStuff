@@ -21,7 +21,7 @@
 #' lm_ex(n = 55, intercept = 25, slope = -5, sigma = 0.75)
 
 
-lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5){
+lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5, custAxis = FALSE, xlim, ylim){
   
   # Load ggplot
   require(ggplot2)
@@ -50,28 +50,61 @@ lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5){
     hjustvar = c(-0.20, -0.10),
     vjustvar = c(-1, 2))
 
-  p <- ggplot(mod_df, aes(x = x, y = y)) + 
-    geom_point(size = 3, color = 'grey30', alpha = 0.5) + 
-    geom_point(size = 2, color = 'lightblue', alpha = 0.4) + 
-    geom_abline(color = "darkred", lwd = 1,
-                slope = coef(mod_ex)[2], 
-                intercept = coef(mod_ex)[1]) + 
-    # Intercept lines
-    geom_vline(xintercept = 0, lty = 3, color = 'grey30') + 
-    geom_hline(yintercept = coef(mod_ex)[1], lty = 3, 
-               color = 'grey30') + 
-    # Slope lines 
-    geom_segment(aes(x = 0, xend = 1, 
-                     y = coef(mod_ex)[1], yend = coef(mod_ex)[1]), 
-                     lty = 2, color = 'darkred') + 
-    geom_segment(aes(x = 1, xend = 1, 
-                     y = coef(mod_ex)[1], 
-                     yend = coef(mod_ex)[1] + coef(mod_ex)[2]), 
-                     lty = 2, color = 'darkred') + 
-    geom_text(data = annotations, aes(x = xpos, y = ypos, 
-              hjust = hjustvar, vjust = vjustvar, 
-              label = annotateText)) +
-    theme_bw(base_size = 20, base_family = "Times")
+  if (custAxis == FALSE) {
+    
+  	xlim <- xlim
+  	ylim <- ylim
+  	
+    p <- ggplot(mod_df, aes(x = x, y = y)) + 
+      geom_point(size = 3, color = 'grey30', alpha = 0.5) + 
+      geom_point(size = 2, color = 'lightblue', alpha = 0.4) + 
+      geom_abline(color = "darkred", lwd = 1,
+                  slope = coef(mod_ex)[2], 
+                  intercept = coef(mod_ex)[1]) + 
+      # Intercept lines
+      geom_vline(xintercept = 0, lty = 3, color = 'grey30') + 
+      geom_hline(yintercept = coef(mod_ex)[1], lty = 3, 
+                 color = 'grey30') + 
+      # Slope lines 
+      geom_segment(aes(x = 0, xend = 1, 
+                       y = coef(mod_ex)[1], yend = coef(mod_ex)[1]), 
+                       lty = 2, color = 'darkred') + 
+      geom_segment(aes(x = 1, xend = 1, 
+                       y = coef(mod_ex)[1], 
+                       yend = coef(mod_ex)[1] + coef(mod_ex)[2]), 
+                       lty = 2, color = 'darkred') + 
+      geom_text(data = annotations, aes(x = xpos, y = ypos, 
+                hjust = hjustvar, vjust = vjustvar, 
+                label = annotateText)) +
+      theme_bw(base_size = 20, base_family = "Times")
+    } else {
 
+    p <- ggplot(mod_df, aes(x = x, y = y)) + 
+      geom_point(size = 3, color = 'grey30', alpha = 0.5) + 
+      geom_point(size = 2, color = 'lightblue', alpha = 0.4) + 
+      geom_abline(color = "darkred", lwd = 1,
+                  slope = coef(mod_ex)[2], 
+                  intercept = coef(mod_ex)[1]) + 
+      # Intercept lines
+      geom_vline(xintercept = 0, lty = 3, color = 'grey30') + 
+      geom_hline(yintercept = coef(mod_ex)[1], lty = 3, 
+                 color = 'grey30') + 
+      # Slope lines 
+      geom_segment(aes(x = 0, xend = 1, 
+                       y = coef(mod_ex)[1], yend = coef(mod_ex)[1]), 
+                       lty = 2, color = 'darkred') + 
+      geom_segment(aes(x = 1, xend = 1, 
+                       y = coef(mod_ex)[1], 
+                       yend = coef(mod_ex)[1] + coef(mod_ex)[2]), 
+                       lty = 2, color = 'darkred') + 
+      geom_text(data = annotations, aes(x = xpos, y = ypos, 
+                hjust = hjustvar, vjust = vjustvar, 
+                label = annotateText)) +
+      xlim(xlim) + 
+      ylim(ylim) + 
+      theme_bw(base_size = 20, base_family = "Times")
+    }
   print(p)
 }
+
+
