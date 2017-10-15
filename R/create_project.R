@@ -41,9 +41,10 @@ create_project <- function(name = 'my_project', type = 'html') {
 
         # Set paths for secondary directories and store in vector 
         scripts_dir <- paste(home_dir, 'scripts', sep = '/', collapse = '')
-        report_dir <- paste(home_dir, 'report', sep = '/', collapse = '')
-        data_dir <- paste(home_dir, 'data', sep = '/', collapse = '')
-        all_dirs <- c(scripts_dir, report_dir, data_dir)
+        report_dir  <- paste(home_dir, 'report', sep = '/', collapse = '')
+        data_dir    <- paste(home_dir, 'data', sep = '/', collapse = '')
+        slides_dir  <- paste(home_dir, 'slides', sep = '/', collapse = '')
+        all_dirs    <- c(scripts_dir, report_dir, data_dir, slides_dir)
 
         # Create secondary directories
         for (i in all_dirs) {
@@ -53,7 +54,7 @@ create_project <- function(name = 'my_project', type = 'html') {
         # Print secondary structure success
         cat("Secondary structure added.\n")
 
-        # Store .Rmd file path 
+        # Store .Rmd file path for report
         report <- paste(report_dir, '/', name, '.Rmd', sep = '', collapse = '')
 
         # Create .Rmd file and set basic template
@@ -84,6 +85,37 @@ create_project <- function(name = 'my_project', type = 'html') {
                      "library(lingStuff)", 
                      "", 
                      "biVarPlot(cars, dist, speed)"), script)
+
+        # Store .Rmd file path for slides
+        slides <- paste(slides_dir, '/', name, '.Rmd', sep = '', collapse = '')
+
+        # Create .Rmd file for slides and set basic template
+        file.create(slides)
+        writeLines(c("---", 
+                     paste("title: '", name, "'", sep = ""), 
+                     "subtitle: \'\'",
+                     "author: \'\'", 
+                     "date: \'Rutgers University </br> `r Sys.Date()`\'",
+                     "output: ",
+                     "  xaringan::moon_reader:",
+                     "    lib_dir: libs", 
+                     "    css: \"http://www.jvcasillas.com/ru_xaringan_css/css/ru_xaringan.css\"",
+                     "    nature:",
+                     "      highlightStyle: github", 
+                     "      highlightLines: true", 
+                     "      countIncrementalSlides: false", 
+                     "      ratio: \"16:9\"",
+                     "---", 
+                     "", 
+                     "# Slide", 
+                     "",
+                     "```{r echo=FALSE}", 
+                     "library(knitr)",
+                     paste("read_chunk('../scripts/", name, ".R')", sep = ''),
+                     "```", 
+                     "", 
+                     "```{r, 'load', echo=FALSE, fig.retina=2}", "```"), slides)
+
     }
     cat('Finished. :) \n')
 }
