@@ -22,10 +22,15 @@ edit as you see fit.
     (production experiments)
 -   `inv_logit`: Calculate the inverse logit from a GLM object (log odds
     to probability)
+-   `lm_ex`: Creates a scatter plot and fits a linear model. Used for
+    teaching.
+-   `vowel_plot`: Takes a dataframe of formant data and creates a vowel
+    plot.
 
 ### Data sets
 
-These have been moved to the `untidydata` package.
+These have been moved to the
+[untidydata](https://github.com/jvcasillas/untidydata) package.
 
 Installation
 ------------
@@ -43,11 +48,10 @@ error, in which case you should copy and paste the following code into
 the console:
 
     install.packages("devtools")
-    library(devtools)
-    install_github("jvcasill/lingStuff")
 
-If you already have devtools then you only need to copy and paste lines
-2 and 3 of the above code chunk.
+Now that you have `devtools` installed, you can install `lingStuff`.
+
+    devtools::install_github("jvcasill/lingStuff")
 
 Examples
 --------
@@ -55,50 +59,29 @@ Examples
 Here are some examples of the functions. You might want to install
 `tidyverse` if you haven't already.
 
-### crossOver
+### vowel\_plot
 
-    library(lingStuff); library(tidyverse); library(pander)
+    library(lingStuff)
+    library(tidyverse)
+    library(untidydata)
 
-    # Generate data
-    set.seed(1)
-    vot <- rnorm(20, 15, 5)
-    vot <- sort(vot)
-    phon1 <- c(0,1,0,0,0,0,0,1,0,1,0,1,0,1,1,1,1,1,1,1)
-    group1 <- rep('g1', 20)
-    df1 <- data.frame(vot = vot, phon = phon1, group = group1)
-    phon2 <- c(1,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1)
-    group2 <- rep('g2', 20)
-    df2 <- data.frame(vot = vot, phon = phon2, group = group2)
-    df <- rbind(df1, df2)
+    spanish_vowels %>% 
+      separate(., col = label, into = c('id', 'gender', 'vowel'), sep = "-") %>% 
+      vowel_plot(data = ., vowel = 'vowel', f1 = 'f1', f2 = 'f2', group = 'gender')
 
-    # Fit models
-    glm1 <- glm(phon ~ vot, data = df, family = "binomial")
-    glm2 <- glm(phon ~ vot * group, data = df, family = "binomial")
+    ##    vowel gender       f1        f2
+    ## 1      a female 735.1713 1657.2717
+    ## 2      e female 558.8545 2113.2856
+    ## 3      i female 385.0679 2426.1463
+    ## 4      o female 560.2237 1328.5739
+    ## 5      u female 420.5353 1293.4553
+    ## 6      a   male 642.3957 1347.9507
+    ## 7      e   male 460.9596 1813.4000
+    ## 8      i   male 286.6176 2141.5392
+    ## 9      o   male 459.1942 1031.0266
+    ## 10     u   male 318.6032  987.9089
 
-    # Get crossover points
-    cross_over(mod = glm1, cont_pred = 'vot')
-
-    ## [1] 16.20771
-
-    cross_over(mod = glm2, cont_pred = 'vot')
-
-    ## [1] 15.53595
-
-    cross_over(mod = glm2, cont_pred = 'vot', grouping_var = TRUE, 
-               int_adj = 'groupg2', slope_adj = 'vot:groupg2')
-
-    ## [1] 17.10169
-
-    # Plot regression with crossover point
-    ggplot(df, aes(x = vot, y = phon, color = group)) + 
-      geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = F) + 
-      geom_vline(xintercept = cross_over(mod = glm2, cont_pred = 'vot')) +
-      geom_vline(xintercept = cross_over(mod = glm2, cont_pred = 'vot', 
-                                         grouping_var = T, int_adj = 'groupg2', 
-                                         slope_adj = 'vot:groupg2')) + 
-      theme_minimal()
-
-<img src="README_files/figure-markdown_strict/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-markdown_strict/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 ### To add
 
