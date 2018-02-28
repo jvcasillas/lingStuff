@@ -44,7 +44,8 @@ create_project <- function(name = 'my_project', type = 'html') {
         report_dir  <- paste(home_dir, 'report', sep = '/', collapse = '')
         data_dir    <- paste(home_dir, 'data', sep = '/', collapse = '')
         slides_dir  <- paste(home_dir, 'slides', sep = '/', collapse = '')
-        all_dirs    <- c(scripts_dir, report_dir, data_dir, slides_dir)
+        docs_dir    <- paste(home_dir, 'docs', sep = '/', collapse = '')
+        all_dirs    <- c(scripts_dir, report_dir, data_dir, slides_dir, docs_dir)
 
         # Create secondary directories
         for (i in all_dirs) {

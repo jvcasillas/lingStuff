@@ -1,7 +1,0 @@
-load("/Users/casillas/code/r/lingStuff/data/vot.RData")
-str(vot)
-ls()
-df
-load("/Users/casillas/code/r/lingStuff/data/vot.RData")
-ls()
-str(vot)
