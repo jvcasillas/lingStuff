@@ -35,6 +35,7 @@
 #' cross_over(mod = glm2, cont_pred = 'vot', grouping_var = TRUE, int_adj = 'groupg2', slope_adj = 'vot:groupg2')
 #' 
 #' # Plot regression with crossover point
+#' library(tidyverse)
 #' ggplot(df, aes(x = vot, y = phon)) + 
 #'   geom_smooth(method = 'glm', method.args = list(family = 'binomial')) + 
 #'   geom_vline(xintercept = cross_over(mod = glm1, cont_pred = 'vot'))
