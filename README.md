@@ -51,7 +51,7 @@ the console:
 
 Now that you have `devtools` installed, you can install `lingStuff`.
 
-    devtools::install_github("jvcasill/lingStuff")
+    devtools::install_github("jvcasillas/lingStuff")
 
 Examples
 --------
