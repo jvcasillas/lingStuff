@@ -7,9 +7,11 @@
 euc_dist(data, var1, var2)
 }
 \arguments{
-\item{x1}{Numeric vector (generally f1).}
+\item{data}{A data frame}
 
-\item{x2}{Numeric vectors (generally f2).}
+\item{var1}{Numeric vector (generally f1).}
+
+\item{var2}{Numeric vectors (generally f2).}
 }
 \description{
 This function allows you to calculate the euclidean distance between two vectors
@@ -24,6 +26,7 @@ df <- data.frame(vowel = gl(n = 2, k = 5, labels = c('a', 'o')),
 euc_dist(data = df, var1 = var1, var2 = var2)
 
 # Calculate euc.dist for each vowel
+library(dplyr)
 df \%>\%
  group_by(., vowel) \%>\%
  summarise(euc = euc_dist(., var1 = var1, var2 = var2))

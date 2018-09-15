@@ -44,17 +44,22 @@ cross_over(mod = glm1, cont_pred = 'vot')
 
 # Get crossover point of grouping variables
 cross_over(mod = glm2, cont_pred = 'vot')
-cross_over(mod = glm2, cont_pred = 'vot', grouping_var = TRUE, int_adj = 'groupg2', slope_adj = 'vot:groupg2')
+cross_over(mod = glm2, cont_pred = 'vot', grouping_var = TRUE, 
+           int_adj = 'groupg2', slope_adj = 'vot:groupg2')
 
 # Plot regression with crossover point
+library(ggplot2)
 ggplot(df, aes(x = vot, y = phon)) + 
   geom_smooth(method = 'glm', method.args = list(family = 'binomial')) + 
   geom_vline(xintercept = cross_over(mod = glm1, cont_pred = 'vot'))
 
 ggplot(df, aes(x = vot, y = phon, color = group)) + 
-  geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = F) + 
+  geom_smooth(method = 'glm', method.args = list(family = 'binomial'), 
+              se = FALSE) + 
   geom_vline(xintercept = cross_over(mod = glm2, cont_pred = 'vot')) +
-  geom_vline(xintercept = cross_over(mod = glm2, cont_pred = 'vot', grouping_var = T, 
-                                     int_adj = 'groupg2', slope_adj = 'vot:groupg2'))
+  geom_vline(xintercept = cross_over(mod = glm2, cont_pred = 'vot', 
+                                     grouping_var = TRUE, 
+                                     int_adj = 'groupg2', 
+                                     slope_adj = 'vot:groupg2'))
 }
 \keyword{crossover}

@@ -1,8 +1,9 @@
 #' A euclidean distance function
 #'
 #' This function allows you to calculate the euclidean distance between two vectors
-#' @param x1 Numeric vector (generally f1).
-#' @param x2 Numeric vectors (generally f2).
+#' @param data A data frame
+#' @param var1 Numeric vector (generally f1).
+#' @param var2 Numeric vectors (generally f2).
 #' @keywords euclidean distance
 #' @export
 #' @examples
@@ -15,6 +16,7 @@
 #' euc_dist(data = df, var1 = var1, var2 = var2)
 #' 
 #' # Calculate euc.dist for each vowel
+#' library(dplyr)
 #' df %>%
 #'  group_by(., vowel) %>%
 #'  summarise(euc = euc_dist(., var1 = var1, var2 = var2))

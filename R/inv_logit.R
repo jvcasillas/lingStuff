@@ -20,10 +20,11 @@
 #' testLM <- lm(speed ~ dist, data = cars)
 #' 
 #' # Get beta weights as probabilities
+#' library(dplyr)
 #' inv_logit(glm0)
 #' inv_logit(glm1)
 #' inv_logit(glm2)
-#' inv_logit(testLM) # Gives an error
+#' #inv_logit(testLM) # Gives an error
 
 
 inv_logit <- function(mod) {

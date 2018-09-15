@@ -15,10 +15,15 @@
 #' @export
 #' @examples
 #' # Vowel plot without grouping variable
-#' vowel_plot(data = vowel_data, vowel = 'vowel', f1 = 'f1', f2 = 'f2', group = NULL)
+#' 
+#' library("untidydata")
+#' data("spanish_vowels")
+#' #vowel_plot(data = spanish_vowels, vowel = 'vowel', f1 = 'f1', f2 = 'f2', 
+#' #           group = NULL)
 #' 
 #' # Vowel plot with grouping variable
-#' vowel_plot(data = vowel_data, vowel = 'vowel', f1 = 'f1', f2 = 'f2', group = 'gender')
+#' # vowel_plot(data = spanish_vowels, vowel = 'vowel', f1 = 'f1', f2 = 'f2', 
+#' #            group = 'gender')
 
 
 vowel_plot <- function(data, vowel, f1, f2, group = NULL) {

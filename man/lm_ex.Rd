@@ -15,6 +15,12 @@ lm_ex(n = 100, intercept = 50, slope = 10, sigma = 0.5,
 \item{slope}{The slope the line}
 
 \item{sigma}{Spread around the mean}
+
+\item{custAxis}{Logical. Set to true to use custom xlim/ylim}
+
+\item{xlim}{Vector for x axis, 'custAxis' must be TRUE.}
+
+\item{ylim}{Vector for y axis, 'custAxis' must be TRUE.}
 }
 \description{
 This function takes user inputs, creates a data frame, 
@@ -25,7 +31,7 @@ teach the linear model.
 }
 \examples{
 # 'y' as a function of 'x' with 100 observations, intercept 
-of 50, slope of 10, and sigma at 0.5
+# of 50, slope of 10, and sigma at 0.5
 lm_ex()
 
 # Negative slope

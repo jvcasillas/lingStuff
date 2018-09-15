@@ -1,7 +1,7 @@
 Package: lingStuff
 Title: Tools and Gems for Linguistics Related Research
 Date: 2018
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: person("Joseph Vincent", "Casillas", , "joseph.casillas@rutgers.edu", role = c("aut", "cre"))
 Description: This package loads a series of functions that I find useful when
     tidying, cleaning plotting and analyzing linguistic related data in R. Some are
@@ -9,8 +9,8 @@ Description: This package loads a series of functions that I find useful when
 URL: https://github.com/jvcasillas/lingStuff
 Depends:
     R (>= 3.1.3)
-License: What license is it under?
+License: MIT + file LICENSE
 LazyData: true
 Imports:
-    tidyverse
-RoxygenNote: 6.0.1
+    dplyr, ggplot2
+RoxygenNote: 6.1.0

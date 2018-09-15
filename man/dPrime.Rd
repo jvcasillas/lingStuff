@@ -39,6 +39,7 @@ dPrime(axb, hit, fa)
 
 # Calculate d prime for each subject by group, plot it, 
 # and run a linear model
+library(dplyr)
 axb \%>\%
   group_by(subj, group) \%>\%
   summarize(dp = dPrime(., hit, fa)) \%T>\%

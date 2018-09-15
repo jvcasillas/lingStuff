@@ -10,11 +10,14 @@
 #' @param intercept The y-intercept
 #' @param slope The slope the line
 #' @param sigma Spread around the mean
+#' @param custAxis Logical. Set to true to use custom xlim/ylim
+#' @param xlim Vector for x axis, 'custAxis' must be TRUE.
+#' @param ylim Vector for y axis, 'custAxis' must be TRUE.
 #' @keywords linear model plot
 #' @export
 #' @examples
 #' # 'y' as a function of 'x' with 100 observations, intercept 
-#' of 50, slope of 10, and sigma at 0.5
+#' # of 50, slope of 10, and sigma at 0.5
 #' lm_ex()
 #' 
 #' # Negative slope
