@@ -1,7 +1,5 @@
 
-<img src='https://raw.githubusercontent.com/jvcasillas/hex_stickers/master/stickers/lingStuff.png' align='right' width='275px'/>
-
-# lingStuff
+# lingStuff <img src='https://raw.githubusercontent.com/jvcasillas/hex_stickers/master/stickers/lingStuff.png' align='right' width='275px'/>
 
 ## Overview
 

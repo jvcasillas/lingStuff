@@ -2,7 +2,9 @@ Package: lingStuff
 Title: Tools and Gems for Linguistics Related Research
 Date: 2018
 Version: 0.1.3
-Authors@R: person("Joseph Vincent", "Casillas", , "joseph.casillas@rutgers.edu", role = c("aut", "cre"))
+Authors@R: c(
+    person("Joseph Vincent", "Casillas", , "joseph.casillas@rutgers.edu", role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0001-8735-9910")))
 Description: This package loads a series of functions that I find useful when
     tidying, cleaning plotting and analyzing linguistic related data in R. Some are
     mine, and others were taken and adapted from other packages/people.
@@ -14,3 +16,4 @@ LazyData: true
 Imports:
     dplyr, ggplot2
 RoxygenNote: 6.1.0
+BugReports: https://github.com/jvcasillas/lingStuff/issues
