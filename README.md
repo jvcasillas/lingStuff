@@ -1,7 +1,7 @@
 
-# lingStuff <img src='https://raw.githubusercontent.com/jvcasillas/hex_stickers/master/stickers/lingStuff.png' align='right' width='275px'/>
+## lingStuff <img src='https://raw.githubusercontent.com/jvcasillas/hex_stickers/master/stickers/lingStuff.png' align='right' width='275px' style="padding-left:5px;"/>
 
-## Overview
+### Overview
 
 This is a collection of `R` functions that I often use in my research.
 Some are borrowed and edited, others are my own. Feel free to fork and
@@ -29,12 +29,12 @@ edit as you see fit.
   - `vowel_plot`: Takes a dataframe of formant data and creates a vowel
     plot.
 
-### Data sets
+#### Data sets
 
 These have been moved to the
 [untidydata](https://github.com/jvcasillas/untidydata) package.
 
-## Installation
+### Installation
 
 In order to install this package you must have devtools and version
 3.1.3 of R. Don’t know if you have devtools? Copy and paste this into
@@ -60,7 +60,7 @@ Now that you have `devtools` installed, you can install `lingStuff`.
 devtools::install_github("jvcasillas/lingStuff")
 ```
 
-## Examples
+### Examples
 
 Here are some examples of the functions. You might want to install
 `tidyverse` if you haven’t already.
@@ -91,6 +91,6 @@ spanish_vowels %>%
 
 <img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
-### To add
+#### To add
 
   - Contrast coefficients
