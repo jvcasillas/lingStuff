@@ -4,8 +4,15 @@
 \alias{lm_ex}
 \title{A linear regression teaching tool}
 \usage{
-lm_ex(n = 100, intercept = 50, slope = 10, sigma = 0.5,
-  custAxis = FALSE, xlim = NULL, ylim = NULL)
+lm_ex(
+  n = 100,
+  intercept = 50,
+  slope = 10,
+  sigma = 0.5,
+  custAxis = FALSE,
+  xlim = NULL,
+  ylim = NULL
+)
 }
 \arguments{
 \item{n}{Number of observations}

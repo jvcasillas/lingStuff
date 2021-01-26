@@ -14,6 +14,8 @@
 #' @param xlim Vector for x axis, 'custAxis' must be TRUE.
 #' @param ylim Vector for y axis, 'custAxis' must be TRUE.
 #' @keywords linear model plot
+#' @import ggplot2
+#' @importFrom stats rnorm coef
 #' @export
 #' @examples
 #' # 'y' as a function of 'x' with 100 observations, intercept 
@@ -25,10 +27,7 @@
 
 
 lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5, 
-				  custAxis = FALSE, xlim = NULL, ylim = NULL){
-  
-  # Load ggplot
-  require(ggplot2)
+                  custAxis = FALSE, xlim = NULL, ylim = NULL){
 
   # Define variables
   x <- rnorm(n)
@@ -53,11 +52,11 @@ lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5,
                      paste("Slope = ", round(coef(mod_ex)[2], 2))),
     hjustvar = c(-0.20, -0.10),
     vjustvar = c(-1, 2))
-
+  
   if (custAxis == FALSE) {
     
-  	xlim <- xlim
-  	ylim <- ylim
+    xlim <- xlim
+    ylim <- ylim
   	
     p <- ggplot(mod_df, aes(x = x, y = y)) + 
       geom_point(size = 3, color = 'grey30', alpha = 0.5) + 
@@ -77,10 +76,14 @@ lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5,
                        y = coef(mod_ex)[1], 
                        yend = coef(mod_ex)[1] + coef(mod_ex)[2]), 
                        lty = 2, color = 'darkred') + 
-      geom_text(data = annotations, aes(x = xpos, y = ypos, 
-                hjust = hjustvar, vjust = vjustvar, 
-                label = annotateText)) +
-      theme_bw(base_size = 20, base_family = "Times")
+      geom_text(data = annotations, aes(x = .data$xpos, y = .data$ypos, 
+                hjust = .data$hjustvar, vjust = .data$vjustvar, 
+                label = .data$annotateText)) +
+      theme_bw(base_size = 20, base_family = "Times") + 
+      theme(axis.title.y = element_text(size = rel(.9), hjust = 0.95),
+        panel.grid.major = element_line(colour = 'grey90', size = 0.15),
+        panel.grid.minor = element_line(colour = 'grey90', size = 0.15))
+    
     } else {
 
     p <- ggplot(mod_df, aes(x = x, y = y)) + 
@@ -101,14 +104,19 @@ lm_ex <- function(n = 100, intercept = 50, slope = 10, sigma = 0.5,
                        y = coef(mod_ex)[1], 
                        yend = coef(mod_ex)[1] + coef(mod_ex)[2]), 
                        lty = 2, color = 'darkred') + 
-      geom_text(data = annotations, aes(x = xpos, y = ypos, 
-                hjust = hjustvar, vjust = vjustvar, 
-                label = annotateText)) +
+      geom_text(data = annotations, aes(x = .data$xpos, y = .data$ypos, 
+                hjust = .data$hjustvar, vjust = .data$vjustvar, 
+                label = .data$annotateText)) +
       xlim(xlim) + 
       ylim(ylim) + 
-      theme_bw(base_size = 20, base_family = "Times")
+      theme_bw(base_size = 20, base_family = "Times") + 
+      theme(axis.title.y = element_text(size = rel(.9), hjust = 0.95),
+            panel.grid.major = element_line(colour = 'grey90', size = 0.15),
+            panel.grid.minor = element_line(colour = 'grey90', size = 0.15))
     }
+  
   print(p)
+
 }
 
 

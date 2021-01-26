@@ -3,6 +3,8 @@
 #' This function allows you to calculate probability from log odds
 #' @param mod A glm object
 #' @keywords inverse logit
+#' @import dplyr
+#' @importFrom rlang .data
 #' @export
 #' @examples
 #' # Generate data
@@ -29,9 +31,6 @@
 
 inv_logit <- function(mod) {
     
-    # Load dplyr
-    require(dplyr)
-    
     # Check to see if mod = glm object, if not, stop 
     if (class(mod)[1] == 'glm')
         {
@@ -45,9 +44,9 @@ inv_logit <- function(mod) {
             tempDF$variables <- rownames(tempDF)
 
             # Group by 'betas' and calculate inverse logit for all values
-            betasDF <- group_by(tempDF, variables, betas) %>% 
-            summarise(., prob = (exp(betas) / (1 + exp(betas)))) %>%
-            as.data.frame(.)
+            betasDF <- group_by(tempDF, .data$variables, .data$betas) %>% 
+            summarise(prob = (exp(.data$betas) / (1 + exp(.data$betas)))) %>%
+            as.data.frame()
             return(betasDF)
         } else {
             stop('Error: this function requires a glm object\n',

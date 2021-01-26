@@ -6,6 +6,7 @@
 #' @param fac Factors.
 #' @param ... Elipsis for passing arguements
 #' @keywords error bars
+#' @importFrom stats sd
 #' @export
 #' @examples
 #' eb(mtcars$mpg, as.factor(mtcars$cyl), ylab = "Miles per gallon", xlab = "cyl")

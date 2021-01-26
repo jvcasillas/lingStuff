@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' # Create a new project with html report
-#' create_project(name = 'myProject', type = 'html')
+#' # create_project(name = 'my_project', type = 'html')
 
 create_project <- function(name = 'my_project', type = 'html') {
     
@@ -41,11 +41,11 @@ create_project <- function(name = 'my_project', type = 'html') {
 
         # Set paths for secondary directories and store in vector 
         scripts_dir <- paste(home_dir, 'scripts', sep = '/', collapse = '')
-        report_dir  <- paste(home_dir, 'report', sep = '/', collapse = '')
+        figs_dir    <- paste(home_dir, 'figs', sep = '/', collapse = '')
         data_dir    <- paste(home_dir, 'data', sep = '/', collapse = '')
         slides_dir  <- paste(home_dir, 'slides', sep = '/', collapse = '')
         docs_dir    <- paste(home_dir, 'docs', sep = '/', collapse = '')
-        all_dirs    <- c(scripts_dir, report_dir, data_dir, slides_dir, docs_dir)
+        all_dirs    <- c(scripts_dir, figs_dir, data_dir, slides_dir, docs_dir)
 
         # Create secondary directories
         for (i in all_dirs) {
@@ -56,7 +56,7 @@ create_project <- function(name = 'my_project', type = 'html') {
         cat("Secondary structure added.\n")
 
         # Store .Rmd file path for report
-        report <- paste(report_dir, '/', name, '.Rmd', sep = '', collapse = '')
+        report <- paste(docs_dir, '/', name, '.Rmd', sep = '', collapse = '')
 
         # Create .Rmd file and set basic template
         file.create(report)
@@ -70,7 +70,7 @@ create_project <- function(name = 'my_project', type = 'html') {
                      "", 
                      "```{r echo=FALSE}", 
                      "library(knitr)",
-                     paste("read_chunk('../scripts/", name, ".R')", sep = ''),
+                     paste("source('../scripts/", name, ".R')", sep = ''),
                      "```", 
                      "", 
                      "```{r, 'load', echo=FALSE}", "```"), report)
@@ -80,9 +80,7 @@ create_project <- function(name = 'my_project', type = 'html') {
         
         # Create .R script and set basic template
         file.create(script)
-        writeLines(c("## @knitr load", 
-                     "",
-                     "# Load library", 
+        writeLines(c("# Load libraries",
                      "library(lingStuff)", 
                      "", 
                      "biVarPlot(cars, dist, speed)"), script)
@@ -100,9 +98,7 @@ create_project <- function(name = 'my_project', type = 'html') {
                      "output: ",
                      "  xaringan::moon_reader:",
                      "    lib_dir: libs", 
-                     "    css: [\"hygge\", 
-          \"https://www.jvcasillas.com/ru_xaringan/css/rutgers.css\", 
-          \"https://www.jvcasillas.com/ru_xaringan/css/rutgers-fonts.css\"]",
+                     "    css: [\"hygge\", \"rutgers\", \"rutgers-fonts\"]",
                      "    nature:",
                      "      beforeInit: [\"https://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js\"]",
                      "      highlightStyle: github", 
@@ -115,7 +111,7 @@ create_project <- function(name = 'my_project', type = 'html') {
                      "",
                      "```{r echo=FALSE}", 
                      "library(knitr)",
-                     paste("read_chunk('../scripts/", name, ".R')", sep = ''),
+                     paste("source('../scripts/", name, ".R')", sep = ''),
                      "```", 
                      "", 
                      "```{r, 'load', echo=FALSE, fig.retina=2}", "```"), slides)

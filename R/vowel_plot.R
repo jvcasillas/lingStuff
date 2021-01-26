@@ -11,7 +11,9 @@
 #' @param f1 A continuous variable
 #' @param f2 A continuous variable
 #' @param group An optional grouping variable for facets
+#' @param print Logical for printing descriptives
 #' @keywords vowel plot
+#' @importFrom stats as.formula aggregate
 #' @export
 #' @examples
 #' # Vowel plot without grouping variable
@@ -26,10 +28,7 @@
 #' #            group = 'gender')
 
 
-vowel_plot <- function(data, vowel, f1, f2, group = NULL) {
-
-  # Load ggplot
-  require(ggplot2)
+vowel_plot <- function(data, vowel, f1, f2, group = NULL, print = FALSE) {
 
   # Check inputs for data frame 
   if(!is.data.frame(data)) {
@@ -43,7 +42,10 @@ vowel_plot <- function(data, vowel, f1, f2, group = NULL) {
   # Calculate means of f1/f2 as a function of vowel and print it 
   means_formula <- as.formula(paste("cbind(", f1, ",", f2, ")", "~", vowel))
   means <- aggregate(means_formula, FUN = mean, data = data)
-  print(means)
+  
+  if (print == TRUE) {
+  return(means)
+  }
 
   # Plot 
   p <- ggplot(data, 
@@ -65,7 +67,10 @@ vowel_plot <- function(data, vowel, f1, f2, group = NULL) {
   # and print it
   means_formula <- as.formula(paste("cbind(", f1, ",", f2, ")", "~", vowel, "+", group))
   means <- aggregate(means_formula, FUN = mean, data = data)
-  print(means)
+
+  if (print == TRUE) {
+  return(means)
+  }
 
   # Plot 
   p <- ggplot(data, 
@@ -83,7 +88,7 @@ vowel_plot <- function(data, vowel, f1, f2, group = NULL) {
 
   }
 
-  print(p)
+  return(p)
 
 }
 

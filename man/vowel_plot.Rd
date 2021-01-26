@@ -4,7 +4,7 @@
 \alias{vowel_plot}
 \title{A vowel plot function}
 \usage{
-vowel_plot(data, vowel, f1, f2, group = NULL)
+vowel_plot(data, vowel, f1, f2, group = NULL, print = FALSE)
 }
 \arguments{
 \item{data}{A data frame.}
@@ -16,6 +16,8 @@ vowel_plot(data, vowel, f1, f2, group = NULL)
 \item{f2}{A continuous variable}
 
 \item{group}{An optional grouping variable for facets}
+
+\item{print}{Logical for printing descriptives}
 }
 \description{
 This function will plot f1/f2 data. The function takes 4 

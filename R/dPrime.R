@@ -10,6 +10,7 @@
 #' @param h A vector of hits (0 = miss, 1 = hit).
 #' @param f A vector of false alarms (0 = correct rejection, 1 = false alarm).
 #' @keywords d prime
+#' @importFrom stats qnorm
 #' @export
 #' @examples
 #' # Create some data

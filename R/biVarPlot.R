@@ -11,6 +11,8 @@
 #' @param y A dependent variable
 #' @param family A distribution ('gaussian', 'binomial', or 'poisson')
 #' @keywords bivariate regression
+#' @importFrom stats glm lm predict plogis
+#' @import graphics
 #' @export
 #' @examples
 #' # Linear regression
