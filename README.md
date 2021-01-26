@@ -1,4 +1,9 @@
 
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/jvcasillas/lingStuff/workflows/R-CMD-check/badge.svg)](https://github.com/jvcasillas/lingStuff/actions)
+<!-- badges: end -->
+
 ## lingStuff <img src='https://raw.githubusercontent.com/jvcasillas/hex_stickers/master/stickers/lingStuff.png' align='right' width='275px' style="padding-left:5px;"/>
 
 ### Overview
