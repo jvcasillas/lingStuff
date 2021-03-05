@@ -1,7 +1,7 @@
 Package: lingStuff
 Title: Tools and Gems for Linguistics Related Research
 Date: 2018
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: c(
     person("Joseph Vincent", "Casillas", , "joseph.casillas@rutgers.edu", role = c("aut", "cre"), 
       comment = c(ORCID = "0000-0001-8735-9910")))
