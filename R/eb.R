@@ -7,10 +7,13 @@
 #' @param ... Elipsis for passing arguements
 #' @keywords error bars
 #' @importFrom stats sd
+#' @import untidydata
 #' @export
 #' @examples
 #' eb(mtcars$mpg, as.factor(mtcars$cyl), ylab = "Miles per gallon", xlab = "cyl")
-
+#' library(untidydata)
+#' data(spirantization)
+#' eb(spirantization$cIntensity, as.factor(spirantization$position))
 
 
 eb <- function(dv, fac, ...) {

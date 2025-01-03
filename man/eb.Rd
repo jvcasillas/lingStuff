@@ -19,6 +19,9 @@ code was written by Dr. Mike Hammond at the U of A.
 }
 \examples{
 eb(mtcars$mpg, as.factor(mtcars$cyl), ylab = "Miles per gallon", xlab = "cyl")
+library(untidydata)
+data(spirantization)
+eb(spirantization$cIntensity, as.factor(spirantization$position))
 }
 \keyword{bars}
 \keyword{error}

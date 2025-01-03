@@ -1,7 +1,7 @@
 Package: lingStuff
 Title: Tools and Gems for Linguistics Related Research
 Date: 2018
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: c(
     person("Joseph Vincent", "Casillas", , "joseph.casillas@rutgers.edu", role = c("aut", "cre"), 
       comment = c(ORCID = "0000-0001-8735-9910")))
@@ -20,6 +20,6 @@ Imports:
     untidydata
 Remotes:
     github::jvcasillas/untidydata
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 BugReports: https://github.com/jvcasillas/lingStuff/issues
 Encoding: UTF-8
