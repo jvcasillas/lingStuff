@@ -12,7 +12,8 @@ lm_ex(
   custAxis = FALSE,
   xlim = NULL,
   ylim = NULL,
-  base_size = 20
+  base_size = 20,
+  text_size = 5
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ lm_ex(
 \item{ylim}{Vector for y axis, 'custAxis' must be TRUE.}
 
 \item{base_size}{Numeric value to adjust plot text size}
+
+\item{text_size}{Numeric value to adjust annotation text size}
 }
 \description{
 This function takes user inputs, creates a data frame, 

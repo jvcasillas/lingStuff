@@ -14,6 +14,7 @@
 #' @param xlim Vector for x axis, 'custAxis' must be TRUE.
 #' @param ylim Vector for y axis, 'custAxis' must be TRUE.
 #' @param base_size Numeric value to adjust plot text size
+#' @param text_size Numeric value to adjust annotation text size
 #' @keywords linear model plot
 #' @import ggplot2
 #' @importFrom stats rnorm coef
@@ -29,7 +30,8 @@
 
 lm_ex <- function(
     n = 100, intercept = 50, slope = 10, sigma = 0.5, 
-    custAxis = FALSE, xlim = NULL, ylim = NULL, base_size = 20
+    custAxis = FALSE, xlim = NULL, ylim = NULL, 
+    base_size = 20, text_size = 5
   ){
 
   # Define variables
@@ -89,7 +91,8 @@ lm_ex <- function(
         data = annotations, 
         aes(x = .data$xpos, y = .data$ypos, 
             hjust = .data$hjustvar, vjust = .data$vjustvar, 
-            label = .data$annotateText)
+            label = .data$annotateText), 
+        size = text_size
       ) +
       theme_bw(base_size = base_size, base_family = "Palatino") + 
       theme(axis.title.y = element_text(size = rel(.9), hjust = 0.95),
@@ -126,7 +129,8 @@ lm_ex <- function(
         data = annotations, 
         aes(x = .data$xpos, y = .data$ypos, 
             hjust = .data$hjustvar, vjust = .data$vjustvar, 
-            label = .data$annotateText)
+            label = .data$annotateText), 
+        size = text_size
       ) +
       xlim(xlim) + 
       ylim(ylim) + 
